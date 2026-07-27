@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Automation Opportunity Scanner — deXevel</title>
+  <meta name="description" content="A 3-minute scan that puts a euro figure on the revenue your business leaks to manual process. Solar, recruitment, and agency-specific. No email wall." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./tokens.css" />
+  <link rel="stylesheet" href="./app.css" />
+</head>
+<body data-booking-url="https://cal.com/dexevel/15min">
+  <!-- Animated grid background (deXevel.com DNA) -->
+  <div class="grid-background">
+    <div class="grid-background__grid"></div>
+    <div class="grid-background__fade"></div>
+  </div>
+
+  <!-- Live cost-of-inaction ticker (v2 §2.1) — sticky sub-header -->
+  <div id="leak-ticker" class="ticker" hidden aria-live="polite">
+    <span class="ticker__label">Leaking now</span>
+    <span class="ticker__day"><span data-ticker-day>€0</span><span class="ticker__unit">/day</span></span>
+    <span class="ticker__since"><span data-ticker-since>€0</span> since you opened this <span data-ticker-mins>1</span> min ago</span>
+    <span class="ticker__dir" aria-hidden="true">▼</span>
+  </div>
+
+  <!-- Nav: N5 floating pill (design.md) -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav__pill">
+      <a class="wordmark" href="#top">deXevel</a>
+      <a class="nav__cta" href="#scan">Start scan</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- Hero: Workbench family (design.md) -->
+    <header class="hero" id="scan">
+      <p class="hero__eyebrow">Interactive diagnostic · 3 minutes · no email wall</p>
+      <h1 class="hero__display">Your automation gap,<br />in euros — not adjectives.</h1>
+      <p class="hero__lede">Eight questions. A live number that ticks up while you answer. A report that quotes <em>your</em> vertical's own damning research back at you. Then a 15-minute call.</p>
+      <a class="btn btn--primary btn--lg" href="#quiz" data-scroll-to-assessment>Run the scan</a>
+      <p class="hero__reassure">Client-side, £0 cost, no AI inside the tool. The numbers are a directional model from your own inputs.</p>
+    </header>
+
+    <!-- Questionnaire (8 steps) -->
+    <section class="quiz" id="quiz" aria-label="Automation scan">
+      <div class="quiz__ticker-spacer"></div>
+      <div id="app" class="step" tabindex="-1"></div>
+      <p id="step-flash" class="step__flash" hidden></p>
+    </section>
+
+    <!-- Report (rendered by ui.js) -->
+    <section class="report-wrap" id="report-wrap" hidden aria-label="Your report"></section>
+
+    <!-- Climax CTA (v2 §2.4, upgraded v3) -->
+    <section class="cta" id="cta" hidden>
+      <div class="cta__inner">
+        <h2 class="cta__head">This delta is what 15 minutes gets you.</h2>
+        <div id="cta-specific" class="cta__specific" hidden></div>
+        <div class="cta__actions">
+          <a class="btn btn--primary btn--lg" id="btn-cal" href="https://cal.com/dexevel/15min">Book the free audit call</a>
+        </div>
+        <p class="cta__value">Free 15-minute audit call — worth £1000.</p>
+
+        <!-- Soft PDF gate (Web3Forms) -->
+        <form class="gate" id="lead-gate" hidden>
+          <p class="gate__title">Get the PDF version</p>
+          <div class="gate__fields">
+            <label class="gate__field">Name<input class="field" name="name" type="text" autocomplete="name" placeholder="Your name" /></label>
+            <label class="gate__field">Company<input class="field" name="company" type="text" autocomplete="organization" placeholder="Company" /></label>
+            <label class="gate__field gate__field--email">Email<input class="field" name="email" type="email" autocomplete="email" placeholder="you@company.com" required /></label>
+          </div>
+          <button class="btn btn--primary" type="submit">Email my PDF</button>
+          <p class="gate__msg" data-gate-msg hidden></p>
+        </form>
+
+        <div id="pdf-reveal" class="pdf-reveal" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: Ft2 inline single line (design.md) -->
+  <footer class="footer">
+    <p class="footer__statement">Don't optimise the leak. Close it.</p>
+    <div class="footer__meta">
+      <span class="wordmark wordmark--sm">deXevel</span>
+      <a class="footer__link" href="https://www.dexevel.com/contact-us">Contact</a>
+      <span class="footer__copy">2026 · Automation diagnostics, not advice.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

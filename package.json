@@ -1,0 +1,14 @@
+{
+  "name": "interactive-lead-magnet",
+  "version": "1.0.0",
+  "private": true,
+  "description": "deXevel Automation Opportunity Scanner — static GitHub Pages lead magnet",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "serve": "npx --yes serve -l 4173 ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
